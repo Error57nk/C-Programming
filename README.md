@@ -1,4 +1,4 @@
 # C-Programming
-Basic C programing
+Basic C and
 Advance
 Project and Other
