@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<string.h>
+
+struct dst{
+	char name[10];
+	int pay;
+};
+
+int main()
+{
+	struct dst s[20];
+	char nam[10],st[200],sn[5];
+	int p,i,j,len,d=0,bill=0;
+	float pay;
+	printf("\n Enter Name Amount paid eg:- \n Nitesh 26 Sololearn 24 Mark 54 .....\n");
+	gets(st);
+	len=strlen(st);
+	for(i=0;i<len;i++)
+	{	
+		j=0;
+		while(st[i]!=' ')
+		{
+			nam[j]=st[i];
+			i++;
+			j++;
+		}
+		strcpy(s[d].name,nam);
+		for(j=0;j<10;j++)
+			nam[j]='\0';                 
+		i++;
+		j=0;	
+		while(st[i]!=' ')
+		{
+			sn[j]=st[i];
+			i++;
+			j++;
+		}
+		p= atoi(sn);
+		s[d].pay=p;
+		for(j=0;j<5;j++)
+			sn[j]='\0';       
+		d++;
+		
+		
+	}
+	for(i=0;i<d;i++)
+	{
+		bill+=s[i].pay;
+		printf(" ----*---- ");
+	}
+	printf("\n Total Bill = %d ",bill);
+	pay=(float)bill/(float)d;
+	printf("\n %.2f each of %d Member",pay,d);
+	for(i=0;i<d;i++)
+	{
+		printf("\n %s %s --> %.2f ",s[i].name,(pay - s[i].pay < 0) ? " RECEIVE":" PAY",(pay - s[i].pay));
+	}
+	
+}
